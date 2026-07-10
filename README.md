@@ -87,7 +87,7 @@ $$ \frac{n!}{k!(n-k)!} = \binom{n}{k} $$
 
 ## 截图
 
-![MarkdownReader](docs/Screenshot.png)
+![MarkdownReader](docs/ScreenShot.png)
 
 ## 下载安装
 
