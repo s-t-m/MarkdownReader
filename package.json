@@ -1,0 +1,101 @@
+{
+  "name": "markdown-reader",
+  "version": "1.0.0",
+  "description": "Markdown Reader - A beautiful Windows markdown reader",
+  "author": "Codex",
+  "main": "main.js",
+  "scripts": {
+    "build:renderer": "node build-renderer.js",
+    "start": "npm run build:renderer && electron .",
+    "dist": "npm run build:renderer && electron-builder --win",
+    "pack": "npm run build:renderer && electron-builder --win --dir"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "esbuild": "^0.23.0",
+    "highlight.js": "^11.10.0",
+    "katex": "^0.16.11",
+    "marked": "^13.0.3",
+    "mermaid": "^10.9.1"
+  },
+  "dependencies": {
+  },
+  "build": {
+    "appId": "com.codex.markdownreader",
+    "productName": "MarkdownReader",
+    "copyright": "Copyright (c) 2026 Codex",
+    "compression": "maximum",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "dist/**/*",
+      "src/index.html",
+      "src/styles.css",
+      "src/logo.png",
+      "src/katex.css",
+      "src/fonts/**/*",
+      "src/mermaid.min.js",
+      "MarkdownReader.ico"
+    ],
+   "win": {
+     "target": [
+       {
+         "target": "nsis",
+         "arch": ["x64"]
+       }
+     ],
+     "icon": "MarkdownReader.ico",
+     "electronLanguages": ["zh-CN", "en-US"],
+     "artifactName": "MarkdownReader-Setup-${version}.${ext}"
+   },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "include": "build/installer.nsh",
+      "installerIcon": "MarkdownReader.ico",
+      "uninstallerIcon": "MarkdownReader.ico",
+      "installerHeaderIcon": "MarkdownReader.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MarkdownReader",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": true
+    },
+    "fileAssociations": [
+      {
+        "ext": "md",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "MarkdownReader.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "markdown",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "MarkdownReader.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "mdown",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "MarkdownReader.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "mkd",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "MarkdownReader.ico",
+        "role": "Editor"
+      }
+    ]
+  }
+}
