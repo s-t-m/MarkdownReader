@@ -1,221 +1,176 @@
-# MarkdownReader
+﻿# MarkdownReader
 
-一个基于 Electron 构建的精美 Windows Markdown 阅读器。
-
-支持 GitHub 风格 Markdown 渲染、代码语法高亮、KaTeX 数学公式、Mermaid 图表、目录导航、明暗主题、多窗口对比等功能。
-
+涓€涓熀浜?Electron 鏋勫缓鐨勭簿缇?Windows Markdown 闃呰鍣ㄣ€?
+鏀寔 GitHub 椋庢牸 Markdown 娓叉煋銆佷唬鐮佽娉曢珮浜€並aTeX 鏁板鍏紡銆丮ermaid 鍥捐〃銆佺洰褰曞鑸€佹槑鏆椾富棰樸€佸绐楀彛瀵规瘮绛夊姛鑳姐€?
 [English Documentation](docs/README.md)
 
-## 功能特性
+## 鍔熻兘鐗规€?
+### Markdown 娓叉煋
 
-### Markdown 渲染
+- 瀹屾暣鏀寔 GitHub 椋庢牸 Markdown锛圙FM锛夛紝鍖呮嫭琛ㄦ牸銆佷换鍔″垪琛ㄣ€佸垹闄ょ嚎銆佽嚜鍔ㄩ摼鎺ョ瓑
+- 浠ｇ爜鍧楄娉曢珮浜紝鏀寔 190+ 绉嶇紪绋嬭瑷€
+- 浠ｇ爜鍧楀彸涓婅鏄剧ず璇█鏍囩锛屾偓鍋滃悗鍑虹幇涓€閿鍒舵寜閽?- 琛屽唴浠ｇ爜涓庡潡绾т唬鐮侀噰鐢ㄤ笉鍚岃瑙夋牱寮忥紝渚夸簬鍖哄垎
 
-- 完整支持 GitHub 风格 Markdown（GFM），包括表格、任务列表、删除线、自动链接等
-- 代码块语法高亮，支持 190+ 种编程语言
-- 代码块右上角显示语言标签，悬停后出现一键复制按钮
-- 行内代码与块级代码采用不同视觉样式，便于区分
+### 鏁板鍏紡
 
-### 数学公式
-
-- 基于 KaTeX 实现高性能数学公式渲染
-- 支持行内公式：用 `$` 包裹，例如 `$E = mc^2$`
-- 支持块级公式：用 `$$` 包裹，例如：
+- 鍩轰簬 KaTeX 瀹炵幇楂樻€ц兘鏁板鍏紡娓叉煋
+- 鏀寔琛屽唴鍏紡锛氱敤 `$` 鍖呰９锛屼緥濡?`$E = mc^2$`
+- 鏀寔鍧楃骇鍏紡锛氱敤 `$$` 鍖呰９锛屼緥濡傦細
 
 ```markdown
 $$ \frac{n!}{k!(n-k)!} = \binom{n}{k} $$
 ```
 
-- 支持 LaTeX 语法分隔符 `\(\)` 和 `\[\]`
-- 渲染失败时不会中断页面，显示原始文本
+- 鏀寔 LaTeX 璇硶鍒嗛殧绗?`\(\)` 鍜?`\[\]`
+- 娓叉煋澶辫触鏃朵笉浼氫腑鏂〉闈紝鏄剧ず鍘熷鏂囨湰
 
-### Mermaid 图表
+### Mermaid 鍥捐〃
 
-- 支持流程图、时序图、甘特图、状态图、类图、ER 图等多种图表类型
-- 主题切换时自动适配明暗配色
-- 图表居中显示，支持缩放和导出
+- 鏀寔娴佺▼鍥俱€佹椂搴忓浘銆佺敇鐗瑰浘銆佺姸鎬佸浘銆佺被鍥俱€丒R 鍥剧瓑澶氱鍥捐〃绫诲瀷
+- 涓婚鍒囨崲鏃惰嚜鍔ㄩ€傞厤鏄庢殫閰嶈壊
+- 鍥捐〃灞呬腑鏄剧ず锛屾敮鎸佺缉鏀惧拰瀵煎嚭
 
-### 目录导航
+### 鐩綍瀵艰埅
 
-- 左侧边栏自动生成文档目录树，层级缩进显示
-- 滚动时通过 IntersectionObserver 实时高亮当前阅读位置的标题
-- 目录支持模糊筛选，快速定位章节
-- 可拖拽调整侧边栏宽度
-- 快捷键 `Ctrl+Shift+C` 一键收起或展开
+- 宸︿晶杈规爮鑷姩鐢熸垚鏂囨。鐩綍鏍戯紝灞傜骇缂╄繘鏄剧ず
+- 婊氬姩鏃堕€氳繃 IntersectionObserver 瀹炴椂楂樹寒褰撳墠闃呰浣嶇疆鐨勬爣棰?- 鐩綍鏀寔妯＄硦绛涢€夛紝蹇€熷畾浣嶇珷鑺?- 鍙嫋鎷借皟鏁翠晶杈规爮瀹藉害
+- 蹇嵎閿?`Ctrl+Shift+C` 涓€閿敹璧锋垨灞曞紑
 
-### 主题系统
+### 涓婚绯荤粺
 
-- 内置亮色和暗色两种主题，平滑过渡切换
-- 原生 Windows 标题栏（最小化/最大化/关闭按钮）颜色随主题自动适配
-- 所有 UI 元素和代码高亮配色均完整支持双主题
-- 快捷键 `Ctrl+Shift+T` 一键切换
-- 主题选择自动持久化，下次启动恢复
+- 鍐呯疆浜壊鍜屾殫鑹蹭袱绉嶄富棰橈紝骞虫粦杩囨浮鍒囨崲
+- 鍘熺敓 Windows 鏍囬鏍忥紙鏈€灏忓寲/鏈€澶у寲/鍏抽棴鎸夐挳锛夐鑹查殢涓婚鑷姩閫傞厤
+- 鎵€鏈?UI 鍏冪礌鍜屼唬鐮侀珮浜厤鑹插潎瀹屾暣鏀寔鍙屼富棰?- 蹇嵎閿?`Ctrl+Shift+T` 涓€閿垏鎹?- 涓婚閫夋嫨鑷姩鎸佷箙鍖栵紝涓嬫鍚姩鎭㈠
 
-### 多窗口支持
+### 澶氱獥鍙ｆ敮鎸?
+- 姣忎釜鏂囦欢鍦ㄧ嫭绔嬬獥鍙ｄ腑鎵撳紑锛屽彲骞舵帓瀵规瘮涓嶅悓鏂囨。
+- 鍙屽嚮鎴栧彸閿墦寮€鏂扮殑 Markdown 鏂囦欢鏃惰嚜鍔ㄥ垱寤烘柊绐楀彛
+- 鑿滃崟鏍忔搷浣滐紙缂╂斁銆佷富棰樸€佹煡鎵剧瓑锛夌簿鍑嗕綔鐢ㄤ簬褰撳墠鑱氱劍绐楀彛
+- 蹇嵎閿?`Ctrl+Shift+N` 鎵嬪姩鍒涘缓绌虹櫧鏂扮獥鍙?- 蹇嵎閿?`Ctrl+W` 鍏抽棴褰撳墠绐楀彛
 
-- 每个文件在独立窗口中打开，可并排对比不同文档
-- 双击或右键打开新的 Markdown 文件时自动创建新窗口
-- 菜单栏操作（缩放、主题、查找等）精准作用于当前聚焦窗口
-- 快捷键 `Ctrl+Shift+N` 手动创建空白新窗口
-- 快捷键 `Ctrl+W` 关闭当前窗口
+### 鏌ユ壘鍔熻兘
 
-### 查找功能
+- 椤靛唴鍏ㄦ枃鎼滅储锛岄珮浜墍鏈夊尮閰嶇粨鏋?- 涓婁竴涓?涓嬩竴涓鑸紝褰撳墠鍖归厤椤圭壒娈婇珮浜?- 瀹炴椂杈撳叆鍗虫椂鎼滅储锛屾敮鎸佹鍒欒〃杈惧紡杞箟
+- 蹇嵎閿?`Ctrl+F` 鎵撳紑鏌ユ壘鏍忥紝`Esc` 鍏抽棴
 
-- 页内全文搜索，高亮所有匹配结果
-- 上一个/下一个导航，当前匹配项特殊高亮
-- 实时输入即时搜索，支持正则表达式转义
-- 快捷键 `Ctrl+F` 打开查找栏，`Esc` 关闭
+### 闃呰浣撻獙
 
-### 阅读体验
+- 椤堕儴闃呰杩涘害鏉★紝瀹炴椂鏄剧ず闃呰浣嶇疆鐧惧垎姣?- 鐘舵€佹爮鏄剧ず鏂囦欢鍚嶃€佸瓧鏁扮粺璁°€侀璁￠槄璇绘椂闂?- 缂╂斁鏀寔 50% 鍒?300%锛屽揩鎹烽敭 `Ctrl+=` / `Ctrl+-` / `Ctrl+0`
+- 榧犳爣鎮仠鏍囬鏄剧ず閿氱偣閾炬帴锛屾柟渚垮鍒?
+### 鏂囦欢绠＄悊
 
-- 顶部阅读进度条，实时显示阅读位置百分比
-- 状态栏显示文件名、字数统计、预计阅读时间
-- 缩放支持 50% 到 300%，快捷键 `Ctrl+=` / `Ctrl+-` / `Ctrl+0`
-- 鼠标悬停标题显示锚点链接，方便复制
+- 鏂囦欢鍏宠仈锛氬畨瑁呭悗 `.md`銆乣.markdown`銆乣.mdown`銆乣.mkd` 鏂囦欢鑷姩鍏宠仈
+- 鎷栨斁鎵撳紑锛氬皢鏂囦欢鐩存帴鎷栧叆绐楀彛鍗冲彲鍔犺浇
+- 鏂囦欢鐩戝惉锛氭枃浠跺湪澶栭儴缂栬緫鍣ㄤ慨鏀瑰悗鑷姩鍒锋柊鍐呭
+- 鏈€杩戞枃浠讹細璁板綍鏈€杩戞墦寮€鐨?15 涓枃浠讹紝鏀寔蹇€熻闂?- 閲嶆柊鍔犺浇锛氬揩鎹烽敭 `Ctrl+R` 閲嶆柊璇诲彇褰撳墠鏂囦欢
 
-### 文件管理
-
-- 文件关联：安装后 `.md`、`.markdown`、`.mdown`、`.mkd` 文件自动关联
-- 拖放打开：将文件直接拖入窗口即可加载
-- 文件监听：文件在外部编辑器修改后自动刷新内容
-- 最近文件：记录最近打开的 15 个文件，支持快速访问
-- 重新加载：快捷键 `Ctrl+R` 重新读取当前文件
-
-### 导出与打印
-
-- 一键导出为 PDF，自动隐藏工具栏，优化打印排版
-- 支持系统打印对话框
-
-## 截图
+### 瀵煎嚭涓庢墦鍗?
+- 涓€閿鍑轰负 PDF锛岃嚜鍔ㄩ殣钘忓伐鍏锋爮锛屼紭鍖栨墦鍗版帓鐗?- 鏀寔绯荤粺鎵撳嵃瀵硅瘽妗?
+## 鎴浘
 
 ![MarkdownReader](screenshot.png)
 
-## 下载安装
+## 涓嬭浇瀹夎
 
-1. 前往 [Releases](https://github.com/s-t-m/MarkdownReader/releases) 页面
-2. 下载最新版 `MarkdownReader-Setup-x.x.x.exe`
-3. 双击运行安装程序
-4. 选择「为当前用户安装」或「为所有用户安装」
-5. 可自定义安装目录
-6. 安装完成后可选择立即启动
+1. 鍓嶅線 [Releases](https://github.com/s-t-m/MarkdownReader/releases) 椤甸潰
+2. 涓嬭浇鏈€鏂扮増 `MarkdownReader-Setup-x.x.x.exe`
+3. 鍙屽嚮杩愯瀹夎绋嬪簭
+4. 閫夋嫨銆屼负褰撳墠鐢ㄦ埛瀹夎銆嶆垨銆屼负鎵€鏈夌敤鎴峰畨瑁呫€?5. 鍙嚜瀹氫箟瀹夎鐩綍
+6. 瀹夎瀹屾垚鍚庡彲閫夋嫨绔嬪嵆鍚姩
 
-安装后 `.md` 等文件会自动关联到 MarkdownReader。也可以右键任意 Markdown 文件，选择「打开方式 -> MarkdownReader」。
-
-## 快捷键
-
-| 快捷键 | 功能 |
+瀹夎鍚?`.md` 绛夋枃浠朵細鑷姩鍏宠仈鍒?MarkdownReader銆備篃鍙互鍙抽敭浠绘剰 Markdown 鏂囦欢锛岄€夋嫨銆屾墦寮€鏂瑰紡 -> MarkdownReader銆嶃€?
+## 蹇嵎閿?
+| 蹇嵎閿?| 鍔熻兘 |
 |---|---|
-| `Ctrl+O` | 打开文件 |
-| `Ctrl+R` | 重新加载文件 |
-| `Ctrl+F` | 查找 |
-| `Ctrl+=` | 放大 |
-| `Ctrl+-` | 缩小 |
-| `Ctrl+0` | 重置缩放 |
-| `Ctrl+W` | 关闭窗口 |
-| `Ctrl+Shift+T` | 切换主题 |
-| `Ctrl+Shift+C` | 切换目录 |
-| `Ctrl+Shift+N` | 新建窗口 |
-| `Alt+F4` | 退出 |
+| `Ctrl+O` | 鎵撳紑鏂囦欢 |
+| `Ctrl+R` | 閲嶆柊鍔犺浇鏂囦欢 |
+| `Ctrl+F` | 鏌ユ壘 |
+| `Ctrl+=` | 鏀惧ぇ |
+| `Ctrl+-` | 缂╁皬 |
+| `Ctrl+0` | 閲嶇疆缂╂斁 |
+| `Ctrl+W` | 鍏抽棴绐楀彛 |
+| `Ctrl+Shift+T` | 鍒囨崲涓婚 |
+| `Ctrl+Shift+C` | 鍒囨崲鐩綍 |
+| `Ctrl+Shift+N` | 鏂板缓绐楀彛 |
+| `Alt+F4` | 閫€鍑?|
 
-## 开发指南
+## 寮€鍙戞寚鍗?
+### 鐜瑕佹眰
 
-### 环境要求
+- [Node.js](https://nodejs.org/) 18 鎴栦互涓婄増鏈?- npm
 
-- [Node.js](https://nodejs.org/) 18 或以上版本
-- npm
-
-### 安装依赖
+### 瀹夎渚濊禆
 
 ```bash
 npm install
 ```
 
-### 开发模式运行
-
+### 寮€鍙戞ā寮忚繍琛?
 ```bash
 npm start
 ```
 
-启动后会自动构建渲染器包并打开 Electron 窗口。
-
-### 构建渲染器包
+鍚姩鍚庝細鑷姩鏋勫缓娓叉煋鍣ㄥ寘骞舵墦寮€ Electron 绐楀彛銆?
+### 鏋勫缓娓叉煋鍣ㄥ寘
 
 ```bash
 npm run build:renderer
 ```
 
-使用 esbuild 将 `marked`、`highlight.js`、`katex` 打包为单个 `dist/renderer.bundle.js` 文件。
-
-### 打包安装程序
+浣跨敤 esbuild 灏?`marked`銆乣highlight.js`銆乣katex` 鎵撳寘涓哄崟涓?`dist/renderer.bundle.js` 鏂囦欢銆?
+### 鎵撳寘瀹夎绋嬪簭
 
 ```bash
 npm run dist
 ```
 
-使用 electron-builder 打包 NSIS 安装程序，输出到 `release/` 目录。
+浣跨敤 electron-builder 鎵撳寘 NSIS 瀹夎绋嬪簭锛岃緭鍑哄埌 `release/` 鐩綍銆?
+## 鎶€鏈爤
 
-## 技术栈
+- [Electron](https://www.electronjs.org/) 31 - 璺ㄥ钩鍙版闈㈠簲鐢ㄦ鏋?- [esbuild](https://esbuild.github.io/) - JavaScript 鎵撳寘宸ュ叿
+- [marked](https://marked.js.org/) - Markdown 瑙ｆ瀽鍣?- [highlight.js](https://highlightjs.org/) - 浠ｇ爜璇硶楂樹寒
+- [KaTeX](https://katex.org/) - 鏁板鍏紡娓叉煋
+- [Mermaid](https://mermaid.js.org/) - 鍥捐〃娓叉煋
+- [electron-builder](https://www.electron.build/) - 搴旂敤鎵撳寘
 
-- [Electron](https://www.electronjs.org/) 31 - 跨平台桌面应用框架
-- [esbuild](https://esbuild.github.io/) - JavaScript 打包工具
-- [marked](https://marked.js.org/) - Markdown 解析器
-- [highlight.js](https://highlightjs.org/) - 代码语法高亮
-- [KaTeX](https://katex.org/) - 数学公式渲染
-- [Mermaid](https://mermaid.js.org/) - 图表渲染
-- [electron-builder](https://www.electron.build/) - 应用打包
-
-## 项目结构
+## 椤圭洰缁撴瀯
 
 ```
 MarkdownReader/
-├── main.js              # 主进程（多窗口管理、IPC 通信、菜单）
-├── preload.js           # 预加载桥接（contextIsolation 安全）
-├── build-renderer.js    # esbuild 打包脚本
-├── src/
-│   ├── index.html       # 应用 HTML 结构
-│   ├── renderer.js      # 渲染进程逻辑
-│   ├── styles.css       # 应用样式
-│   ├── katex.css        # KaTeX 样式表
-│   ├── mermaid.min.js   # Mermaid 图表库
-│   ├── logo.png         # 应用 LOGO
-│   └── fonts/           # KaTeX 字体文件（60 个）
-├── build/
-│   └── installer.nsh    # NSIS 自定义安装脚本
-├── docs/
-│   └── README.md        # 英文文档
-├── MarkdownReader.ico   # 应用图标（多尺寸 ICO）
-├── sample.md            # 示例文件
-└── package.json         # 项目配置与构建元数据
+鈹溾攢鈹€ main.js              # 涓昏繘绋嬶紙澶氱獥鍙ｇ鐞嗐€両PC 閫氫俊銆佽彍鍗曪級
+鈹溾攢鈹€ preload.js           # 棰勫姞杞芥ˉ鎺ワ紙contextIsolation 瀹夊叏锛?鈹溾攢鈹€ build-renderer.js    # esbuild 鎵撳寘鑴氭湰
+鈹溾攢鈹€ src/
+鈹?  鈹溾攢鈹€ index.html       # 搴旂敤 HTML 缁撴瀯
+鈹?  鈹溾攢鈹€ renderer.js      # 娓叉煋杩涚▼閫昏緫
+鈹?  鈹溾攢鈹€ styles.css       # 搴旂敤鏍峰紡
+鈹?  鈹溾攢鈹€ katex.css        # KaTeX 鏍峰紡琛?鈹?  鈹溾攢鈹€ mermaid.min.js   # Mermaid 鍥捐〃搴?鈹?  鈹溾攢鈹€ logo.png         # 搴旂敤 LOGO
+鈹?  鈹斺攢鈹€ fonts/           # KaTeX 瀛椾綋鏂囦欢锛?0 涓級
+鈹溾攢鈹€ build/
+鈹?  鈹斺攢鈹€ installer.nsh    # NSIS 鑷畾涔夊畨瑁呰剼鏈?鈹溾攢鈹€ docs/
+鈹?  鈹斺攢鈹€ README.md        # 鑻辨枃鏂囨。
+鈹溾攢鈹€ MarkdownReader.ico   # 搴旂敤鍥炬爣锛堝灏哄 ICO锛?鈹溾攢鈹€ sample.md            # 绀轰緥鏂囦欢
+鈹斺攢鈹€ package.json         # 椤圭洰閰嶇疆涓庢瀯寤哄厓鏁版嵁
 ```
 
-## 工作原理
+## 宸ヤ綔鍘熺悊
 
-### 渲染流程
+### 娓叉煋娴佺▼
 
-1. 主进程读取 Markdown 文件内容，通过 IPC 发送给渲染进程
-2. 渲染进程使用 `marked` 解析 Markdown 为 HTML
-3. 后处理阶段：
-   - 解析图片和链接的相对路径，转换为绝对路径
-   - 使用 `highlight.js` 高亮代码块
-   - 使用 `KaTeX` 渲染数学公式
-   - 使用 `Mermaid` 渲染图表
-   - 从标题构建目录树
-4. 文件监听器持续监控文件变化，外部修改后自动重新渲染
+1. 涓昏繘绋嬭鍙?Markdown 鏂囦欢鍐呭锛岄€氳繃 IPC 鍙戦€佺粰娓叉煋杩涚▼
+2. 娓叉煋杩涚▼浣跨敤 `marked` 瑙ｆ瀽 Markdown 涓?HTML
+3. 鍚庡鐞嗛樁娈碉細
+   - 瑙ｆ瀽鍥剧墖鍜岄摼鎺ョ殑鐩稿璺緞锛岃浆鎹负缁濆璺緞
+   - 浣跨敤 `highlight.js` 楂樹寒浠ｇ爜鍧?   - 浣跨敤 `KaTeX` 娓叉煋鏁板鍏紡
+   - 浣跨敤 `Mermaid` 娓叉煋鍥捐〃
+   - 浠庢爣棰樻瀯寤虹洰褰曟爲
+4. 鏂囦欢鐩戝惉鍣ㄦ寔缁洃鎺ф枃浠跺彉鍖栵紝澶栭儴淇敼鍚庤嚜鍔ㄩ噸鏂版覆鏌?
+### 澶氱獥鍙ｆ灦鏋?
+姣忎釜鏂囦欢鍦ㄧ嫭绔嬬殑 `BrowserWindow` 涓墦寮€锛屾嫢鏈夌嫭绔嬬殑鐘舵€侊紙鏂囦欢鐩戝惉鍣ㄣ€佸綋鍓嶈矾寰勭瓑锛夈€傚崟瀹炰緥閿佺‘淇濈浜屾鎵撳紑鏂囦欢鏃跺垱寤烘柊绐楀彛鑰岄潪鏇挎崲褰撳墠绐楀彛銆傛墍鏈?IPC 澶勭悊鍣ㄩ€氳繃 `BrowserWindow.fromWebContents()` 灏嗘搷浣滆矾鐢卞埌姝ｇ‘鐨勭獥鍙ｃ€?
+### 涓婚绯荤粺
 
-### 多窗口架构
+搴旂敤閫氳繃 CSS 鑷畾涔夊睘鎬э紙鍙橀噺锛夊疄鐜颁富棰樺垏鎹€俙<html>` 鍏冪礌涓婄殑 `data-theme` 灞炴€у湪浜壊鍜屾殫鑹蹭箣闂村垏鎹€傚師鐢熸爣棰樻爮鎸夐挳棰滆壊閫氳繃 `setTitleBarOverlay()` 鍚屾鏇存柊锛屼笌褰撳墠涓婚淇濇寔涓€鑷淬€?
+### 鎵撳寘浼樺寲
 
-每个文件在独立的 `BrowserWindow` 中打开，拥有独立的状态（文件监听器、当前路径等）。单实例锁确保第二次打开文件时创建新窗口而非替换当前窗口。所有 IPC 处理器通过 `BrowserWindow.fromWebContents()` 将操作路由到正确的窗口。
-
-### 主题系统
-
-应用通过 CSS 自定义属性（变量）实现主题切换。`<html>` 元素上的 `data-theme` 属性在亮色和暗色之间切换。原生标题栏按钮颜色通过 `setTitleBarOverlay()` 同步更新，与当前主题保持一致。
-
-### 打包优化
-
-- `marked`、`highlight.js`、`katex` 通过 esbuild 打包进 `renderer.bundle.js`，避免重复打包
-- 仅包含运行时必需的文件（KaTeX CSS/字体、Mermaid JS）
-- 过滤非必要的 Chromium 语言包（仅保留 `zh-CN` 和 `en-US`）
-- NSIS 安装程序启用最大压缩
-
-## 许可证
-
-MIT
+- `marked`銆乣highlight.js`銆乣katex` 閫氳繃 esbuild 鎵撳寘杩?`renderer.bundle.js`锛岄伩鍏嶉噸澶嶆墦鍖?- 浠呭寘鍚繍琛屾椂蹇呴渶鐨勬枃浠讹紙KaTeX CSS/瀛椾綋銆丮ermaid JS锛?- 杩囨护闈炲繀瑕佺殑 Chromium 璇█鍖咃紙浠呬繚鐣?`zh-CN` 鍜?`en-US`锛?- NSIS 瀹夎绋嬪簭鍚敤鏈€澶у帇缂?
+## 璁稿彲璇?
+GPL-3.0

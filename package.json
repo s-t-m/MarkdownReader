@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Markdown Reader - A beautiful Windows markdown reader",
   "author": "Codex",
+  "license": "GPL-3.0",
   "main": "main.js",
   "scripts": {
     "build:renderer": "node build-renderer.js",

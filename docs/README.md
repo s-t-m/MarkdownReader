@@ -1,4 +1,4 @@
-# MarkdownReader
+﻿# MarkdownReader
 
 A beautiful Windows Markdown reader built with Electron.
 
@@ -10,10 +10,10 @@ A beautiful Windows Markdown reader built with Electron.
 - **Mermaid diagrams** including flowcharts, sequence diagrams, Gantt charts, state diagrams, etc.
 - **Table of contents** sidebar with active heading tracking via IntersectionObserver
 - **Light & Dark themes** with native Windows title bar overlay integration
-- **Multi-window support** — open multiple files in separate windows for side-by-side comparison
+- **Multi-window support** 鈥?open multiple files in separate windows for side-by-side comparison
 - **Find in page** with match highlighting and navigation
 - **Reading progress bar** that tracks scroll position
-- **File watcher** — automatically reloads when the file changes on disk
+- **File watcher** 鈥?automatically reloads when the file changes on disk
 - **Zoom controls** from 50% to 300%
 - **Export to PDF** with print-optimized layout
 - **Drag & drop** files directly into the window
@@ -35,7 +35,7 @@ A beautiful Windows Markdown reader built with Electron.
 4. Choose per-user or per-machine installation
 5. Optionally change the installation directory
 
-After installation, `.md` files will be associated with MarkdownReader automatically. You can also right-click any Markdown file and choose "Open with → MarkdownReader".
+After installation, `.md` files will be associated with MarkdownReader automatically. You can also right-click any Markdown file and choose "Open with 鈫?MarkdownReader".
 
 ## Keyboard Shortcuts
 
@@ -88,33 +88,33 @@ The installer will be output to `release/MarkdownReader-Setup-x.x.x.exe`.
 
 ## Tech Stack
 
-- [Electron](https://www.electronjs.org/) 31 — cross-platform desktop framework
-- [esbuild](https://esbuild.github.io/) — JavaScript bundler
-- [marked](https://marked.js.org/) — Markdown parser
-- [highlight.js](https://highlightjs.org/) — syntax highlighting
-- [KaTeX](https://katex.org/) — math formula rendering
-- [Mermaid](https://mermaid.js.org/) — diagram rendering
-- [electron-builder](https://www.electron.build/) — app packaging
+- [Electron](https://www.electronjs.org/) 31 鈥?cross-platform desktop framework
+- [esbuild](https://esbuild.github.io/) 鈥?JavaScript bundler
+- [marked](https://marked.js.org/) 鈥?Markdown parser
+- [highlight.js](https://highlightjs.org/) 鈥?syntax highlighting
+- [KaTeX](https://katex.org/) 鈥?math formula rendering
+- [Mermaid](https://mermaid.js.org/) 鈥?diagram rendering
+- [electron-builder](https://www.electron.build/) 鈥?app packaging
 
 ## Project Structure
 
 ```
 MarkdownReader/
-├── main.js              # Main process (multi-window, IPC, menu)
-├── preload.js           # Context-isolated preload bridge
-├── build-renderer.js    # esbuild bundler script
-├── src/
-│   ├── index.html       # App HTML structure
-│   ├── renderer.js      # Renderer process logic
-│   ├── styles.css       # Application styles
-│   ├── katex.css        # KaTeX stylesheet
-│   ├── mermaid.min.js   # Mermaid library
-│   ├── logo.png         # Application logo
-│   └── fonts/           # KaTeX font files (60 files)
-├── build/
-│   └── installer.nsh    # NSIS custom installer script
-├── MarkdownReader.ico   # Application icon (multi-size ICO)
-└── package.json         # Project metadata and build config
+鈹溾攢鈹€ main.js              # Main process (multi-window, IPC, menu)
+鈹溾攢鈹€ preload.js           # Context-isolated preload bridge
+鈹溾攢鈹€ build-renderer.js    # esbuild bundler script
+鈹溾攢鈹€ src/
+鈹?  鈹溾攢鈹€ index.html       # App HTML structure
+鈹?  鈹溾攢鈹€ renderer.js      # Renderer process logic
+鈹?  鈹溾攢鈹€ styles.css       # Application styles
+鈹?  鈹溾攢鈹€ katex.css        # KaTeX stylesheet
+鈹?  鈹溾攢鈹€ mermaid.min.js   # Mermaid library
+鈹?  鈹溾攢鈹€ logo.png         # Application logo
+鈹?  鈹斺攢鈹€ fonts/           # KaTeX font files (60 files)
+鈹溾攢鈹€ build/
+鈹?  鈹斺攢鈹€ installer.nsh    # NSIS custom installer script
+鈹溾攢鈹€ MarkdownReader.ico   # Application icon (multi-size ICO)
+鈹斺攢鈹€ package.json         # Project metadata and build config
 ```
 
 ## How It Works
@@ -148,4 +148,4 @@ The build process uses `electron-builder` with NSIS target. Key optimizations:
 
 ## License
 
-MIT
+GPL-3.0
