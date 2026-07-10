@@ -100,21 +100,21 @@ The installer will be output to `release/MarkdownReader-Setup-x.x.x.exe`.
 
 ```
 MarkdownReader/
-鈹溾攢鈹€ main.js              # Main process (multi-window, IPC, menu)
-鈹溾攢鈹€ preload.js           # Context-isolated preload bridge
-鈹溾攢鈹€ build-renderer.js    # esbuild bundler script
-鈹溾攢鈹€ src/
-鈹?  鈹溾攢鈹€ index.html       # App HTML structure
-鈹?  鈹溾攢鈹€ renderer.js      # Renderer process logic
-鈹?  鈹溾攢鈹€ styles.css       # Application styles
-鈹?  鈹溾攢鈹€ katex.css        # KaTeX stylesheet
-鈹?  鈹溾攢鈹€ mermaid.min.js   # Mermaid library
-鈹?  鈹溾攢鈹€ logo.png         # Application logo
-鈹?  鈹斺攢鈹€ fonts/           # KaTeX font files (60 files)
-鈹溾攢鈹€ build/
-鈹?  鈹斺攢鈹€ installer.nsh    # NSIS custom installer script
-鈹溾攢鈹€ MarkdownReader.ico   # Application icon (multi-size ICO)
-鈹斺攢鈹€ package.json         # Project metadata and build config
+|--  main.js              # Main process (multi-window, IPC, menu)
+|--  preload.js           # Context-isolated preload bridge
+|--  build-renderer.js    # esbuild bundler script
+|--  src/
+|    |--  index.html       # App HTML structure
+|    |--  renderer.js      # Renderer process logic
+|    |--  styles.css       # Application styles
+|    |--  katex.css        # KaTeX stylesheet
+|    |--  mermaid.min.js   # Mermaid library
+|    |--  logo.png         # Application logo
+|    `--  fonts/           # KaTeX font files (60 files)
+|--  build/
+|    `--  installer.nsh    # NSIS custom installer script
+|--  MarkdownReader.ico   # Application icon (multi-size ICO)
+`--  package.json         # Project metadata and build config
 ```
 
 ## How It Works
